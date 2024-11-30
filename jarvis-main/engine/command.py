@@ -53,6 +53,7 @@ def allCommands(message=1):
 
         if "open" in query:
             from engine.features import openCommand
+            print(query)
             openCommand(query)
         elif "on youtube" in query:
             from engine.features import PlayYoutube

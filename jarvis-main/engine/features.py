@@ -32,14 +32,12 @@ def openCommand(query):
     query = query.replace(ASSISTANT_NAME, "")
     query = query.replace("open", "")
     query.lower()
-
+    
     app_name = query.strip()
-
     if app_name != "":
-
         try:
             cursor.execute(
-                'SELECT path FROM sys_command WHERE name IN (?)', (app_name,))
+                'SELECT path FROM sys_command WHERE name=?', (app_name,))
             results = cursor.fetchall()
 
             if len(results) != 0:
